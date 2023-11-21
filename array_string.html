@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px;">
+
+    <h2> JS STRING METHOD LENGTH</h2>
+
+    <p id="demo"></p>
+
+    <script> 
+    let text = "1234567325345345346qwerty!!!!@";
+
+
+    document.getElementById("demo").innerHTML= text.length;
+    
+    </script>
+
+    <br />  <br /> 
+
+    <!---------------------------------------------------->
+
+    <h3> JS touppercase()</h3>
+
+    <p id="demo1"> </p>
+
+    <script> 
+    let text1 = "asfsdgfhtcs";
+    let result = text1.toUpperCase();
+
+        document.getElementById("demo1").innerHTML=result;
+
+    </script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS tolowercase()</h3>
+
+<p id="demo2"> </p>
+
+<script>
+ let text2 = "HELLO WD92P";
+ let result1 = text2.toLowerCase();
+
+ document.getElementById("demo2").innerHTML=result1;
+
+</script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Concat()</h3>
+
+<p id="demo3"> </p>
+
+<script>
+
+let text3 = "Sun";
+let text4 = "set";
+let result2 = text3.concat(text4);
+document.getElementById("demo3").innerHTML= result2;
+</script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Trim()</h3>
+
+<p id="demo4"></p>
+<p id="demo5"></p>  
+
+    <script>
+        let text5 ="     Hello WD92P!   ";
+        let result3= text5.trim();
+
+        document.getElementById("demo4").innerHTML= text5;
+        document.getElementById("demo5").innerHTML= result3;
+    </script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Array Method</h3>
+
+    <p id="demo6"> </p>
+
+    <script>
+        const students =["Lorenzo","Jasper","Jimmy"];
+        document.getElementById("demo6").innerHTML=students;
+    </script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Every Method</h3>
+
+    <p id="demo7"></p>
+
+    
+    <script>
+        const ages = [32, 33, 16];
+        document.getElementById("demo7").innerHTML= ages.every(checkage);
+
+
+        function checkage(age) {
+          return age > 15;
+        }
+
+
+    </script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Fill Method</h3>
+
+    <p id="demo8"></p>
+
+
+    <script>
+        let students1 = ["kenon", "roy","smiley","phoenix"];
+        document.getElementById("demo8").innerHTML = students1.fill("glenda");
+
+    </script>
+
+<br />  <br /> 
+
+<!---------------------------------------------------->
+
+<h3> JS Filter Method</h3>
+
+    <p id="demo9"></p>
+
+    <script>
+        const ages1 = [32,33,26,16,15,18,35];
+
+        document.getElementById("demo9").innerHTML= ages1.filter(checkadult) ;
+
+        function checkadult(age) {
+             return age >= 18;
+        }
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
