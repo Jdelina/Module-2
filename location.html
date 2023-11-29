@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="height: 3000px;">
+    <h2> Geolocation API</h2>
+
+    <button onclick="getLocation()">click me</button>
+    <p id="position"> </p>
+
+    <script>
+        let x = document.getElementById("position");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not suppported";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude" + position.coords.latitude + "<br /> Longitude:" + position.coords.longitude;
+        }
+
+    </script>
+    
+    <br /> <br />
+    <!-----------------Localstorage---------------------->
+
+    <p id="local"></p>
+
+    <script>
+        localStorage.setItem("name", "smiley");
+        document.getElementById("local").innerHTML= localStorage.getItem("name");
+    </script>
+
+
+<br /> <br />
+<!-----------------Localstorage input---------------------->
+
+<h2>Input localstorage</h2>
+
+<label for="name"> Fullname </label> <br />
+<input type="text" id="firstname" /> <br /> <br />
+<label for="age"> Age</label> <br />
+<input type="text" id="age" /> <br /> <br />
+<label for="course"> Favorite Course</label> <br />
+<input type="text" id="course" /> <br /> <br />
+
+<div class="right">
+    <input type="button" value="add to localStorage" onclick="add_local()" />
+    <input type="button" value="Show localStorage" onclick="show_local()" />
+</div>
+<br />
+<div class="display">
+    <label for="display"> Display</label>
+    <textarea id="display" name="display" rows="10"></textarea>
+</div>
+
+<script>
+    function add_local(){
+       let display = {};
+       display.firstname = document.getElementById('firstname').value
+       display.age = document.getElementById('age').value
+       display.course = document.getElementById('course').value
+
+       window.localStorage.setItem('display', JSON.stringify(display));
+    }
+
+    function show_local(){
+        let _display = JSON.parse(localStorage.getItem("display"));
+        document.getElementById('firstname').value = _display.firstname;
+        document.getElementById('age').value = _display.age;
+        document.getElementById('course').value = _display.course;
+        document.getElementById('display').value = Object.values(_display);
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>
